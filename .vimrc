@@ -132,3 +132,10 @@ autocmd FileType javascript set tabstop=2
 autocmd FileType javascript set shiftwidth=2
 autocmd FileType javascript set softtabstop=2
 
+set smartcase
+set noswapfile
+set incsearch
+set number
+set clipboard=unnamed
+
+
