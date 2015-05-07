@@ -1,6 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+
 # web検索用 ================================================
 # url: $1, delimiter: $2, prefix: $3, words: $4..
 function web_search {
@@ -141,6 +142,9 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export PATH="/Users/sadakoa/.rbenv/shims:/Users/sadakoa/.rbenv/bin:/usr/local/heroku/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/sadakoa/node_modules/.bin"
+
+#ここに書いとく local/binのパス
+export PATH=/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment

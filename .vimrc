@@ -6,37 +6,51 @@ let g:solarized_termcolors=256
 
 "---------------NeoBundle--------------"
 
+" bundleで管理するディレクトリを指定
 set runtimepath+=~/.vim/bundle/neobundle.vim/
 
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 
+" neobundle自体をneobundleで管理
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+" ADD PLUGIN(> ~ <) --------------------------
+
+" NERDTreeを設定
+NeoBundle 'scrooloose/nerdtree'
+
+" 自動的に閉じカッコを挿入してくれる
+NeoBundle 'Townk/vim-autoclose'
+
+" HTMLとCSSのEmmet
+NeoBundle 'mattn/emmet-vim'
+
+" マルチカーソル / :MultipleCursorsFind @@ って打つ
+NeoBundle 'terryma/vim-multiple-cursors'
+
+" Syntaxチェック
+NeoBundle 'scrooloose/syntastic'
+
+
+
+
+
+" ADD PLUGIN ---------------------------------
+
 call neobundle#end()
+
 " Required:
 filetype plugin indent on
 
 NeoBundleCheck
 
-"--------------Plugin----------"
-"
-NeoBundle 'croaker/mustang-vim'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'taichouchou2/surround.vim'
-NeoBundle 'open-browser.vim'
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'taichouchou2/html5.vim'
-NeoBundle 'taichouchou2/vim-javascript'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'h1mesuke/unite-outline'
-
-"-----------Plugin setting-----------------"
-
+"---------------NeoBundle------------------"
 " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
-"let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_enable_on_vim_startup = 1
+
+" NERDTreeのショートカット
+nnoremap <silent><C-z> :NERDTreeToggle<CR>
 
 "-----------基本設定------------"
 
