@@ -1,5 +1,8 @@
 emmet-vim
 neobundle.vim
+neomru.vim
 nerdtree
+syntastic
+unite.vim
 vim-autoclose
 vim-multiple-cursors

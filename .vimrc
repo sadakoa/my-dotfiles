@@ -1,10 +1,11 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 filetype plugin indent on
 syntax enable
 set background=dark
 let g:solarized_termcolors=256
 
-"---------------NeoBundle--------------"
+"---------------NeoBundle-----------------------------------------------------"
 
 " bundleで管理するディレクトリを指定
 set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -15,7 +16,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " neobundle自体をneobundleで管理
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" ADD PLUGIN(> ~ <) --------------------------
+"--------------------- ADD PLUGIN -------------------------------------------
 
 " NERDTreeを設定
 NeoBundle 'scrooloose/nerdtree'
@@ -32,11 +33,37 @@ NeoBundle 'terryma/vim-multiple-cursors'
 " Syntaxチェック
 NeoBundle 'scrooloose/syntastic'
 
+"unite.vimの設定""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" ファイルオープンを便利に
+NeoBundle 'Shougo/unite.vim'
 
+" Unite.vimで最近使ったファイルを表示できるようにする
+NeoBundle 'Shougo/neomru.vim'
 
+" 入力モードで開始する
+let g:unite_enable_start_insert=1
 
-" ADD PLUGIN ---------------------------------
+" バッファ一覧
+noremap <C-P> :Unite buffer<CR>
+
+" ファイル一覧
+noremap <C-N> :Unite -buffer-name=file file<CR>
+
+" 最近使ったファイルの一覧
+noremap <C-M> :Unite file_mru<CR>
+
+" sourcesを「今開いているファイルのディレクトリ」とする
+noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
+
+"unite.vimの設定""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" vimの強力な補完機能
+" NeoBundle 'Shougo/neocomplete.vim'
+" NeoBundle 'marcus/rsense'
+" NeoBundle 'supermomonga/neocomplete-rsense.vim'
+
+"-------------------------- ADD PLUGIN --------------------------------------
 
 call neobundle#end()
 
@@ -45,14 +72,18 @@ filetype plugin indent on
 
 NeoBundleCheck
 
-"---------------NeoBundle------------------"
+"------------------------NeoBundle---------------------------------------------"
+
 " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
 let g:indent_guides_enable_on_vim_startup = 1
 
 " NERDTreeのショートカット
 nnoremap <silent><C-z> :NERDTreeToggle<CR>
 
-"-----------基本設定------------"
+"--------------------------------------------基本設定-----------------------------"
+
+" backスペースが効かなくなる問題を解除
+set backspace=indent,eol,start
 
 "タイトルをバッファ名に変更しない
 set notitle
@@ -91,17 +122,18 @@ set showmatch "対応する括弧のハイライト表示する
 set showmode "モード表示する
 set title "編集中のファイル名を表示する
 set ruler "ルーラーの表示する
-set tabstop=2  "タブ文字数を4にする
+set tabstop=2  "タブ文字数を2にする
+
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
 match ZenkakuSpace /　/" 全角スペースの表示
 
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 自動的に閉じ括弧を入力
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 imap { {}<LEFT>
 imap [ []<LEFT>
 imap ( ()<LEFT>
-""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " カーソルが何行目の何列目に置かれているかを表示する
 set ruler
@@ -140,6 +172,8 @@ syntax on
 " 行番号の色
 highlight LineNr ctermfg=darkyellow
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css  set omnifunc=csscomplete#CompleteCSS
 autocmd FileType javascript set tabstop=2
@@ -152,4 +186,4 @@ set incsearch
 set number
 set clipboard=unnamed
 
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

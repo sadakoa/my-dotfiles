@@ -1,2 +1,2 @@
 # dotfiles
-my dotfiles is very good.
+新しく環境構築する時にやるやつ
