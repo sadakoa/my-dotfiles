@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+#nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
 # web検索用 ================================================
 # url: $1, delimiter: $2, prefix: $3, words: $4..
 function web_search {
